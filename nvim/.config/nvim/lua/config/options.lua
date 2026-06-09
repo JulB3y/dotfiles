@@ -1,0 +1,20 @@
+local g = vim.g
+local o = vim.opt
+
+o.number = true 
+o.relativenumber = true 
+o.clipboard = "unnamedplus" 
+o.autoindent = true 
+o.cursorline = true 
+o.expandtab = true 
+o.shiftwidth = 4 
+o.tabstop = 4 
+o.encoding = "UTF-8" 
+o.ruler = true 
+o.mouse = "a" 
+o.title = true 
+o.wildmenu = true -- When 'wildmenu' is on, command-line completion operates in an enhanced mode.
+o.showcmd = true -- Show (partial) command in the last line of the screen. Set this option off if your terminal is slow.
+o.showmatch = true -- When a bracket is inserted, briefly jump to the matching one.
+o.splitright = true
+o.termguicolors = true
