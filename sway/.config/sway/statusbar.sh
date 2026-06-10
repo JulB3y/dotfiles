@@ -22,7 +22,6 @@ while true; do
         net="Disconnected"
     fi
     
-    # Der gesamte JSON-String steht jetzt sicher in einer einzigen Zeile
     printf ',[{"full_text":"","min_width":800,"align":"right","separator":false},{"full_text":"%s","name":"clock","separator":false},{"full_text":"","min_width":600,"align":"right"},{"full_text":"󰖩 %s ","name":"network"},{"full_text":"%s %s%%","name":"battery"}]\n' "$datetime" "$net" "$bat_icon" "$bat_cap"
     
     sleep 5
