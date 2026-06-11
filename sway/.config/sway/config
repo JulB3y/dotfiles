@@ -36,10 +36,13 @@ input type:pointer {
 	natural_scroll enabled
 }
 
+# === window rules ===
+for_window [app_id="^foot_float$"] floating enable
+
 # === keybinding apps ===
 bindsym $mod+Return exec $term
-bindsym $mod+d exec foot -e tux
 bindsym $mod+b exec firefox
+bindsym $mod+space exec foot --app-id=foot_float -e tux
 
 # === keybinding window operation ===
 bindsym $mod+Shift+q kill
