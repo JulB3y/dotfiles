@@ -9,6 +9,7 @@ output eDP-1 {
 	scale 1.3
 }
 
+
 # === general ===
 font pango:JetBrains Mono 10
 
@@ -43,6 +44,11 @@ for_window [app_id="^foot_float$"] floating enable
 bindsym $mod+Return exec $term
 bindsym $mod+b exec firefox
 bindsym $mod+space exec foot --app-id=foot_float -e tux
+
+
+# === keybinding screenshot ===
+bindsym $mod+Shift+p exec hyprshot -m region --clipboard-only
+bindsym $mod+p exec hyprshot -m region
 
 # === keybinding window operation ===
 bindsym $mod+Shift+q kill
