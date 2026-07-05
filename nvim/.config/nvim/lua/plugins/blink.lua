@@ -5,14 +5,24 @@ return {
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     opts = {
-        keymap = { preset = 'default' },
+        keymap = { 
+            preset = 'none',
+
+            ['<Tab>'] = { 'select_next' },
+            ['<S-Tab>'] = { 'select_prev' },
+            ['<C-Return>'] = { 'accept' }
+        },
 
         appearance = {
             nerd_font_variant = 'mono'
         },
-
-        completion = { documentation = { auto_show = true } },
-
+        cmdline = { enabled = true },
+        completion = { 
+            accept = {
+                auto_brackets = { enabled = true },
+            },
+            documentation = { auto_show = true } 
+        },
         sources = {
             default = { 'lsp', 'path', 'snippets', 'buffer' },
         },
