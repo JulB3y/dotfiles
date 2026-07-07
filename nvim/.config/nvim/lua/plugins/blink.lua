@@ -8,9 +8,11 @@ return {
         keymap = { 
             preset = 'none',
 
-            ['<Tab>'] = { 'select_next' },
+            ['<Tab>'] = { 'select_next', "fallback" },
             ['<S-Tab>'] = { 'select_prev' },
-            ['<C-Return>'] = { 'accept' }
+            ['<C-Return>'] = { 'accept' },
+            ['<C-l>'] = { 'accept', 'snippet_forward', 'fallback' },
+            ['<C-h>'] = { 'snippet_backward', 'fallback' },
         },
 
         appearance = {
@@ -21,11 +23,15 @@ return {
             accept = {
                 auto_brackets = { enabled = true },
             },
-            documentation = { auto_show = true } 
+            documentation = { auto_show = true }, 
+
+            trigger = {show_on_keyword = true },
         },
+        snippets = { preset = 'luasnip'},
         sources = {
             default = { 'lsp', 'path', 'snippets', 'buffer' },
         },
+
 
         fuzzy = { implementation = "prefer_rust_with_warning" },
         -- snippets = { preset = 'luasnip' },
