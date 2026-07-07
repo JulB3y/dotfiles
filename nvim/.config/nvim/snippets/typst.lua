@@ -16,8 +16,16 @@ local in_math = make_condition(function()
 end)
 
 return {
+        --
+        -- manual snippets for typst
+        --
+
 		s("a", t("also loaded!!")),
 	}, {
+        --
+        -- autosnippets for typst
+        --
+
 		s(
 			{ trig = "qp", condition = -in_math, show_condition = -in_math },
 			{ t("$"), i(1), t("$"), i(0) }
@@ -28,6 +36,24 @@ return {
 			t({ "", "$", "" }),
 			i(0),
 		}),
+
+
+        --
+        -- in math snippets
+        --
+        
+        --
+        --  sample
+        --
+        --  s({ 
+        --      trig = "", 
+        --      condition = in_math, 
+        --      show_condition = in_math 
+        --  }, {
+        --      -- nodes here
+        --  })
+        --
+        
         s({ trig = "del", condition = in_math, show_condition = in_math }, {
             t({"delta", ""})
         })
