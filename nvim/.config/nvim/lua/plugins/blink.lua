@@ -10,8 +10,8 @@ return {
 
             ['<Tab>'] = { 'select_next', "fallback" },
             ['<S-Tab>'] = { 'select_prev' },
-            ['<C-Return>'] = { 'accept' },
-            ['<C-l>'] = { 'accept', 'snippet_forward', 'fallback' },
+            ['<C-Return>'] = { 'select_and_accept' },
+            ['<C-l>'] = { 'snippet_forward', 'accept', 'fallback' },
             ['<C-h>'] = { 'snippet_backward', 'fallback' },
         },
 
@@ -24,7 +24,7 @@ return {
                 auto_brackets = { enabled = true },
             },
             documentation = { auto_show = true }, 
-
+            list = { selection = { preselect = false, auto_insert = true },},
             trigger = {show_on_keyword = true },
         },
         snippets = { preset = 'luasnip'},
