@@ -13,6 +13,10 @@ output eDP-1 {
 # === general ===
 font pango:JetBrains Mono 10
 
+# set cursor theme and size
+seat seat0 xcursor_theme Adwaita 26
+
+
 hide_edge_borders --i3 none
 default_border pixel 3
 smart_borders on
@@ -22,6 +26,10 @@ smart_borders on
 #          timeout 300 'swaylock -f -c 000000' \
 #          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
 #          before-sleep 'swaylock -f -c 000000'
+
+
+exec pipewire
+
 
 # === input ===
 input type:touchpad {
@@ -48,7 +56,8 @@ bindsym $mod+space exec foot --app-id=foot_float -e tux
 
 # === keybinding screenshot ===
 bindsym $mod+Shift+p exec hyprshot -m region --clipboard-only
-bindsym $mod+p exec hyprshot -m region
+bindsym $mod+p exec grim -g "$(slurp)" 
+
 
 # === keybinding window operation ===
 bindsym $mod+Shift+q kill
