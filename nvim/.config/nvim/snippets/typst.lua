@@ -13,7 +13,9 @@ local make_condition = require("luasnip.extras.conditions").make_condition
 local in_math = make_condition(function()
 	local ok, node = pcall(vim.treesitter.get_node, { ignore_injections = false })
 	while ok and node do
-		if node:type() == "math" then
+		if node:type() == "string" then
+			return false
+		elseif node:type() == "math" then
 			return true
 		end
 		node = node:parent()
