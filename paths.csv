@@ -1,2 +1,4 @@
 keyd,  /etc
 nvim, ~/.config
+fish, ~/.config
+sway, ~/.config
