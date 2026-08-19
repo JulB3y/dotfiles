@@ -30,6 +30,11 @@ smart_borders on
 
 exec pipewire
 
+# wob OSD (volume/brightness bar)
+exec sh -c '[ -p /tmp/wobpipe ] || mkfifo /tmp/wobpipe; tail -f /tmp/wobpipe | wob'
+
+# autotiling
+exec sat 
 
 # === input ===
 input type:touchpad {
@@ -119,9 +124,9 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # === audio ===
-bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
-bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
-bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
+bindsym --locked XF86AudioMute exec ~/.config/sway/wob.sh volume mute
+bindsym --locked XF86AudioLowerVolume exec ~/.config/sway/wob.sh volume -5%
+bindsym --locked XF86AudioRaiseVolume exec ~/.config/sway/wob.sh volume +5%
 bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
 
 # === media ===
@@ -132,8 +137,8 @@ bindsym --locked XF86AudioNext exec playerctl next
 bindsym --locked XF86AudioStop exec playerctl stop
 
 # === brightness ===
-bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
-bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym --locked XF86MonBrightnessDown exec ~/.config/sway/wob.sh brightness 5%-
+bindsym --locked XF86MonBrightnessUp exec ~/.config/sway/wob.sh brightness 5%+
 
 # === screenshot ===
 bindsym Print exec grim
