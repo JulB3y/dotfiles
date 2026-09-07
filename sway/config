@@ -36,6 +36,11 @@ exec sh -c '[ -p /tmp/wobpipe ] || mkfifo /tmp/wobpipe; tail -f /tmp/wobpipe | w
 # autotiling
 exec sat 
 
+# notifications
+exec mako
+
+exec filen sync documents:tw:Documents
+
 # === input ===
 input type:touchpad {
 	dwt enabled
@@ -60,7 +65,7 @@ bindsym $mod+space exec foot --app-id=foot_float -e tux
 
 
 # === keybinding screenshot ===
-bindsym $mod+Shift+p exec hyprshot -m region --clipboard-only
+bindsym $mod+Shift+p exec grim -g "$(slurp)" - | wl-copy
 bindsym $mod+p exec grim -g "$(slurp)" 
 
 
@@ -122,6 +127,10 @@ mode "resize" {
 	bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+
+
+bindsym $mod+period exec handy --start-hidden
+bindsym $mod+Shift+period exec pkill -USR2 -x handy
 
 # === audio ===
 bindsym --locked XF86AudioMute exec ~/.config/sway/wob.sh volume mute
