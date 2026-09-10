@@ -18,3 +18,10 @@ o.showcmd = true -- Show (partial) command in the last line of the screen. Set t
 o.showmatch = true -- When a bracket is inserted, briefly jump to the matching one.
 o.splitright = true
 o.termguicolors = true
+
+
+vim.filetype.add({
+  pattern = {
+    [".*repos/dotfiles/sway/.*%.conf"] = "swayconfig", -- maps any file in a specific folder
+  },
+})
