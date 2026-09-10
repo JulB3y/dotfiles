@@ -60,9 +60,9 @@ for_window [app_id="^foot_float$"] floating enable
 
 # === keybinding apps ===
 bindsym $mod+Return exec $term
-bindsym $mod+b exec firefox
+bindsym $mod+Shift+Return exec firefox
 bindsym $mod+space exec foot --app-id=foot_float -e tux
-
+bindsym $mod+o exec obsidian
 
 # === keybinding screenshot ===
 bindsym $mod+Shift+p exec grim -g "$(slurp)" - | wl-copy
@@ -111,7 +111,6 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 # === keybinding layout ===
-bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 bindsym $mod+f fullscreen
