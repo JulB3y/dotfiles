@@ -51,7 +51,7 @@ input type:touchpad {
 	middle_emulation enabled
 }
 input type:keyboard {
-	xkb_options compose:ralt,caps:escape,ctrl:swap_alt_ctl
+	xkb_options compose:ralt,caps:escape
 }
 input type:pointer {
 	natural_scroll enabled
