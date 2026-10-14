@@ -9,3 +9,6 @@ source ~/.config/fish/dbus.fish
 
 
 # pyenv init - fish | source
+
+# Pi
+fish_add_path "/home/julbey/.pi/agent/bin"
