@@ -36,7 +36,7 @@ exec pipewire
 exec sh -c '[ -p /tmp/wobpipe ] || mkfifo /tmp/wobpipe; tail -f /tmp/wobpipe | wob'
 
 # autotiling
-exec sat 
+exec ~/repos/sat/target/release/sat 
 
 # notifications
 exec mako
