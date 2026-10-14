@@ -10,8 +10,6 @@ set -gx CYA_COLOR 89B3B6
 set -gx BLU_COLOR A3A9CE
 set -gx MGT_COLOR CF9BC2
 
-set XDG_RUNTIME_DIR /run/user/$(id -u)
-
 # relocated app data (see ~/.app-support)
 set -gx PYENV_ROOT $HOME/.app-support/pyenv
 set -gx RUSTUP_HOME $HOME/.app-support/rustup
