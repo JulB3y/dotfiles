@@ -1,1 +1,3 @@
 nvim/lazy-lock.json
+herdr/*
+!herdr/config.toml
