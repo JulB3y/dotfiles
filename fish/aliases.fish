@@ -2,3 +2,4 @@ alias ls="eza -la --icons auto -s type --no-permissions --total-size --git --no-
 alias vi=nvim
 alias sway=dbus-run-session sway
 alias wget="wget --hsts-file=$HOME/.app-support/wget-hsts"
+alias mistral="firefox https://chat.mistral.ai/work"
