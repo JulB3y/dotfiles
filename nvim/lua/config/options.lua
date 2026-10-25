@@ -18,6 +18,7 @@ o.showcmd = true -- Show (partial) command in the last line of the screen. Set t
 o.showmatch = true -- When a bracket is inserted, briefly jump to the matching one.
 o.splitright = true
 o.termguicolors = true
+o.conceallevel = 1 -- hide markup like [[wikilinks]]/*/ unless cursor on line (needed for obsidian.nvim UI)
 
 
 vim.filetype.add({
