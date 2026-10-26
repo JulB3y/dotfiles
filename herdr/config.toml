@@ -1,11 +1,13 @@
 # herdr configuration
 
+onboarding = false
+
 [theme]
 name = "terminal"
 
 # Override individual color tokens on top of the base theme.
 # Accepts: hex (#rrggbb), named colors, rgb(r,g,b), or panel_bg = "reset"
-# [theme.custom]
+[theme.custom]
 # sidebar_bg = "#181825"
 # active_row_bg = "#1e1e2e"
 # selection_bg = "#313244"
@@ -15,7 +17,7 @@ name = "terminal"
 # green = "#a6e3a1"
 
 # Layer appearance-specific overrides on top when auto_switch is enabled.
-# [theme.custom.light]
+[theme.custom.light]
 # panel_bg = "#eff1f5"
 # text = "#4c4f69"
 #
@@ -38,7 +40,7 @@ channel = "stable"
 version_check = true
 
 # Check herdr.dev for remote agent-detection manifest updates in the background.
-# manifest_check = true
+manifest_check = true
 
 [keys]
 prefix = "ctrl+b"
@@ -124,8 +126,8 @@ navigate_pane_right = "l"
 # Size of the virtual terminal used when no client is attached.
 # Attached clients always use their own terminal size.
 [server]
-# headless_cols = 120
-# headless_rows = 40
+headless_cols = 120
+headless_rows = 40
 
 [worktrees]
 directory = "~/.herdr/worktrees"
@@ -249,7 +251,7 @@ accent = "cyan"
 [ui.sidebar.agents]
 # Blank rows between agent entries. Set to 1 to restore the previous spacing.
 row_gap = 0
-rows = [["state_icon", "machine", "workspace", "agent"]]
+rows = [["state_icon", "machine", "workspace"], ["agent"]]
 # Optional canonical agent IDs replace the default rows for matching agents.
 [ui.sidebar.agents.rows_by_agent]
 claude = [["state_icon", "machine", "workspace", "tab"], ["terminal_title_stripped"], ["agent"]]
@@ -268,8 +270,8 @@ rows = [["state_icon", "workspace"], ["branch", "git_status"]]
 # herdr = show in-app toasts
 # terminal = ask the outer terminal to show a desktop notification
 # system = ask the OS notification service directly
-# delivery = "off"
-# delay_seconds = 1
+delivery = "system"
+delay_seconds = 1
 
 [ui.toast.herdr]
 position = "bottom-right"
@@ -320,12 +322,12 @@ pane_history = false
 # macOS this selects the ASCII-capable keyboard layout; on Windows it toggles
 # a Korean IME between Hangul and English (other IME languages are left
 # unchanged). macOS and Windows only; best-effort. Default: false.
-# switch_ascii_input_source_in_prefix = false
+switch_ascii_input_source_in_prefix = false
 # Expose the focused pane's cursor to the outer terminal so macOS input
 # methods keep tracking the candidate window when TUIs paint their own
 # cursor (Claude Code, pi, codex). Trade-off: extra cursor visible for
 # apps that hide it without painting a replacement (vim normal mode, etc.).
-# reveal_hidden_cursor_for_cjk_ime = false
+reveal_hidden_cursor_for_cjk_ime = false
 # Optional allow-list: only reveal for focused panes whose detected agent
 # matches one of these names. Empty means apply to any focused pane.
 # If the list contains no valid names, the reveal does not apply.
@@ -335,7 +337,7 @@ pane_history = false
 # cjk_ime_agents = []
 # Cursor shape rendered when reveal_hidden_cursor_for_cjk_ime is true.
 # Values: block, steady_block (default), underline, steady_underline, bar, steady_bar.
-# cjk_ime_cursor_shape = "steady_block"
+cjk_ime_cursor_shape = "steady_block"
 
 [advanced]
 # Maximum scrollback buffer size in bytes retained per pane terminal.
