@@ -1,4 +1,5 @@
-alias ls="eza -la --icons auto -s type --no-permissions --total-size --git --no-user --no-time"
+alias ls="eza -l --icons auto -s type --no-permissions --git --no-user --no-time"
+alias lst="ls --total-size"
 alias vi=nvim
 alias sway=dbus-run-session sway
 alias wget="wget --hsts-file=$HOME/.app-support/wget-hsts"
